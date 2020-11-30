@@ -2,13 +2,24 @@
 
 var App = () => {
   return (
-    <ul>
-      <h1>Grocery ToDo List</h1>
-      <li>Milk</li>
-      <li>Bread</li>
-    </ul>
+    <div>
+      <h2>Grocery ToDo List</h2>
+      <Milk />
+      <Bread />
+    </div>
   )
 }
 
+var Milk = () => {
+  return (
+    <div>Milk</div>
+  )
+}
+
+var Bread = () => {
+  return (
+    <div>Bread</div>
+  )
+}
 
 ReactDOM.render(<App />, document.getElementById("app"));
