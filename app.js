@@ -21,12 +21,20 @@ var App = () => {
 //   )
 // }
 
-var GroceryListItem = (props) => (
-  <ul>
-    <li>{props.todos[0]}</li>
-    <li>{props.todos[1]}</li>
-    <li>{props.todos[2]}</li>
-  </ul>
-);
+class GroceryListItem extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div>
+        <li>{this.props.todos[0]}</li>
+        <li>{this.props.todos[1]}</li>
+        <li>{this.props.todos[2]}</li>
+      </div>
+    );
+  }
+}
 
 ReactDOM.render(<App />, document.getElementById("app"));
