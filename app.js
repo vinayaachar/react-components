@@ -24,15 +24,31 @@ var App = () => {
 class GroceryListItem extends React.Component {
   constructor(props) {
     super(props);
+
+      //maintain a state for items hovered
+    this.state = {
+      done: false
+    };
+  }
+
+  onListHovered() {
+    this.setState({
+      done: !this.state.done
+    });
   }
 
   render() {
+
+    var style = {
+      fontWeight : this.state.done? 'bold' : 'normal'
+    };
+
     return (
-      <div>
-        <li>{this.props.todos[0]}</li>
-        <li>{this.props.todos[1]}</li>
-        <li>{this.props.todos[2]}</li>
-      </div>
+      <ul>
+        <li style={style} onMouseOver={this.onListHovered.bind(this)}>{this.props.todos[0]}</li>
+        <li style={style} onMouseOver={this.onListHovered.bind(this)}>{this.props.todos[1]}</li>
+        <li style={style} onMouseOver={this.onListHovered.bind(this)}>{this.props.todos[2]}</li>
+      </ul>
     );
   }
 }
